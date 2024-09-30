@@ -1,78 +1,79 @@
-Create database Clinica_San_Juan;
-go
+CREATE DATABASE Clinica_San_Juan;
+GO
 
 USE Clinica_San_Juan;
 GO
+
 CREATE TABLE [Clientes] (
-  [cliente_Cedula] integer PRIMARY KEY,
-  [Nombre_Cs] char,
-  [Apellido_Cs] char,
-  [NTelefono_CS] char,
-  [Fecha_Nacimiento_CS] date,
-  [Correo_CS] char,
-  [Contraseña_CS] char
+  [cliente_Cedula] INTEGER PRIMARY KEY,
+  [Nombre_Cs] CHAR(50),
+  [Apellido_Cs] CHAR(50),
+  [NTelefono_CS] CHAR(8),
+  [Fecha_Nacimiento_CS] DATE,
+  [Correo_CS] CHAR(50),
+  [ContraseÃ±a_CS] CHAR(50)
 )
 GO
 
 CREATE TABLE [Empleado] (
-  [Empleado_Cedula] integer PRIMARY KEY,
-  [Nombre_Em] char,
-  [Apellido_Em] char,
-  [hora_de_entrada] time,
-  [hora_de_salida] time,
-  [Fecha_De_Nacimiento_Em] date,
-  [Ntelefono_Em] char,
-  [Correreo_Em] char,
-  [Contraseña_Em] char,
-  [Salario_Em] float,
-  [Puesto_Em] char
+  [Empleado_Cedula] INTEGER PRIMARY KEY,
+  [Nombre_Em] CHAR(50),
+  [Apellido_Em] CHAR(50),
+  [hora_de_entrada] TIME,
+  [hora_de_salida] TIME,
+  [Fecha_De_Nacimiento_Em] DATE,
+  [Ntelefono_Em] CHAR(8),
+  [Correreo_Em] CHAR(50),
+  [ContraseÃ±a_Em] CHAR(50),
+  [Salario_Em] FLOAT,
+  [Puesto_Em] CHAR(50)
 )
 GO
 
 CREATE TABLE [Cita] (
-  [Cita_id] int PRIMARY KEY,
-  [fecha_cita] time,
-  [Cliente] int,
-  [Empleado] int,
-  [Estado] char,
-  [motivo] char,
-  [Comentarios] char
+  [Cita_id] INT PRIMARY KEY,
+  [fecha_cita] TIME,
+  [Cliente] INT,
+  [Empleado] INT,
+  [Estado] CHAR(50),
+  [motivo] CHAR(50),
+  [Comentarios] CHAR(50)
 )
 GO
 
 CREATE TABLE [Expediente] (
-  [Expediente_id] int PRIMARY KEY,
-  [Cliente_Ex_id] int,
-  [Fecha_de_Actualizacion] date,
-  [Comentarios_exp] char,
-  [Encargado_Emp_id] INt
+  [Expediente_id] INT PRIMARY KEY,
+  [Cliente_Ex_id] INT,
+  [Fecha_de_Actualizacion] DATE,
+  [Comentarios_exp] CHAR(50),
+  [Encargado_Emp_id] INT
 )
 GO
 
 CREATE TABLE [facturas] (
-  [Factura_id] int PRIMARY KEY,
-  [fecha_factu] date,
-  [Total_Fact] float,
-  [Cliente_id] int,
-  [producto_id] int
+  [Factura_id] INT PRIMARY KEY,
+  [fecha_factu] DATE,
+  [Total_Fact] FLOAT,
+  [Cliente_id] INT,
+  [producto_id] INT
 )
 GO
 
 CREATE TABLE [comentarios] (
-  [Comentario_id] int PRIMARY KEY,
-  [Cliente_Ct_id] int,
-  [fecha_Creacion] date,
-  [Comentario] char
+  [Comentario_id] INT PRIMARY KEY,
+  [Cliente_Ct_id] INT,
+  [fecha_Creacion] DATE,
+  [Comentario] CHAR(50)
 )
 GO
 
 CREATE TABLE [Productos] (
-  [producto_id] int PRIMARY KEY,
-  [producto_nombre] char,
-  [producto_descripcion] char,
-  [producto_precio] decimal,
-  [fecha_de_ingreso] time,
-  [Cantidad_stock] int
+  [producto_id] INT PRIMARY KEY,
+  [producto_nombre] CHAR(50),
+  [producto_descripcion] CHAR(50),
+  [producto_precio] DECIMAL,
+  [fecha_de_ingreso] TIME,
+  [Cantidad_stock] INT
 )
 GO
 
