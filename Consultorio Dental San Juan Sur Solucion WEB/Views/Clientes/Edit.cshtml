@@ -1,0 +1,59 @@
+﻿@model Consultorio_Dental_San_Juan_Sur_Solucion_WEB.Models.Cliente
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Cliente</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ClienteCedula" />
+            <div class="form-group">
+                <label asp-for="NombreCs" class="control-label"></label>
+                <input asp-for="NombreCs" class="form-control" />
+                <span asp-validation-for="NombreCs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApellidoCs" class="control-label"></label>
+                <input asp-for="ApellidoCs" class="form-control" />
+                <span asp-validation-for="ApellidoCs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NtelefonoCs" class="control-label"></label>
+                <input asp-for="NtelefonoCs" class="form-control" />
+                <span asp-validation-for="NtelefonoCs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaNacimientoCs" class="control-label"></label>
+                <input asp-for="FechaNacimientoCs" class="form-control" />
+                <span asp-validation-for="FechaNacimientoCs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CorreoCs" class="control-label"></label>
+                <input asp-for="CorreoCs" class="form-control" />
+                <span asp-validation-for="CorreoCs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContraseñaCs" class="control-label"></label>
+                <input asp-for="ContraseñaCs" class="form-control" />
+                <span asp-validation-for="ContraseñaCs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

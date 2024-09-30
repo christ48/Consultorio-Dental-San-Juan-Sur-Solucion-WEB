@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Consultorio_Dental_San_Juan_Sur_Solucion_WEB.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreCs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApellidoCs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NtelefonoCs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaNacimientoCs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CorreoCs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContraseñaCs)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreCs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApellidoCs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NtelefonoCs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaNacimientoCs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CorreoCs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContraseñaCs)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ClienteCedula">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ClienteCedula">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ClienteCedula">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

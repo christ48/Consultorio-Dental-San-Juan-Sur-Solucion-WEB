@@ -1,8 +1,14 @@
+using Consultorio_Dental_San_Juan_Sur_Solucion_WEB.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddDbContext<ClinicaSanJuanContext>(options =>
+{ options.UseSqlServer(builder.Configuration.GetConnectionString("ConexionDB")); });
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
